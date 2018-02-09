@@ -182,10 +182,7 @@ class Item implements ItemInterface
             $element = $xml->addChild('enclosure');
             $element->addAttribute('url', $this->enclosure['url']);
             $element->addAttribute('type', $this->enclosure['type']);
-
-            if ($this->enclosure['length']) {
-                $element->addAttribute('length', $this->enclosure['length']);
-            }
+            $element->addAttribute('length', intval($this->enclosure['length']));
         }
 
         if (!empty($this->author)) {
